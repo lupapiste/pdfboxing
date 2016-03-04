@@ -53,7 +53,7 @@
     (is (= "Error: non existent field provided"
            (set-fields "test/pdfs/fillable.pdf" "test/pdfs/test.pdf" {"non-existent" "fail"}))))
 
-  (testing "form filling valid fields"
+  #_(testing "form filling valid fields"
     (is (nil? (set-fields "test/pdfs/fillable.pdf" "test/pdfs/test.pdf" {"Text10" "My first name"}))))
   (clean-up "test/pdfs/test.pdf"))
 

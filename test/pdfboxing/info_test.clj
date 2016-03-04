@@ -17,10 +17,10 @@
             "author" nil,
             "subject" "PDF forms",
             "keywords" "forms, flat, fillable",
-            "trapped" nil,
+            "trapped" "False",
             "metadata-keys" #{"AAPL:Keywords" "CreationDate"
                               "Creator" "Keywords" "ModDate" "Producer"
-                              "Subject" "Title"}
+                              "Subject" "Title" "Trapped"}
             "creator" "Adobe InDesign CS3 (5.0.4)",
             "producer" "Mac OS X 10.8.5 Quartz PDFContext"}
            (dissoc (about-doc "test/pdfs/interactiveform.pdf")
@@ -34,15 +34,16 @@
   (testing "for the metadata value"
     (is (= "Example of an Interactive PDF Form"
            (metadata-value "test/pdfs/interactiveform.pdf" "Title")))
-    (is (= "D:20131214134439Z00'00'"
+    (is (= "D:20131214134439Z"
            (metadata-value "test/pdfs/interactiveform.pdf"
                            "CreationDate")))
     (is (= {"AAPL:Keywords" nil,
-            "CreationDate" "D:20131214134439Z00'00'",
+            "CreationDate" "D:20131214134439Z",
             "Creator" "Adobe InDesign CS3 (5.0.4)",
             "Keywords" "forms, flat, fillable",
-            "ModDate" "D:20131214134439Z00'00'",
+            "ModDate" "D:20160304115135+02'00'",
             "Producer" "Mac OS X 10.8.5 Quartz PDFContext",
             "Subject" "PDF forms",
-            "Title" "Example of an Interactive PDF Form"}
+            "Title" "Example of an Interactive PDF Form"
+            "Trapped" nil}
            (metadata-values "test/pdfs/interactiveform.pdf")))))
